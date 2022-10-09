@@ -1,4 +1,4 @@
-package com.testgeek.testgeek;
+package com.rajat.testgeek;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
