@@ -8,7 +8,7 @@ public class TestgeekApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestgeekApplication.class, args);
-		System.out.println("Started...");
+		System.out.println("Welcom to TestGeek!!!");
 	}
 
 }
