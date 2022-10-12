@@ -41,4 +41,26 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public User getUser(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(Long userId) {
+       this.userRepository.deleteById(userId);
+    }
+
+    @Override
+    public User updateUser(User user, Long userId) throws Exception {
+        User updateUser= this.userRepository.findById(userId).orElse(null);
+        if(updateUser==null){
+            System.out.println("Sorry!! User with UserName " + user.getUsername() + "doesn't exist.");
+            throw new Exception("User doesn't Exist!!");
+        }
+        user.setUserId(userId);
+        return this.userRepository.save(user);
+        
+    }
+
 }

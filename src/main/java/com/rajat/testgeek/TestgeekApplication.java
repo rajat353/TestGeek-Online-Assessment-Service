@@ -1,29 +1,24 @@
 package com.rajat.testgeek;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 // import java.util.HashSet;
 // import java.util.Set;
 // import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 // import com.rajat.testgeek.models.Role;
 // import com.rajat.testgeek.models.User;
 // import com.rajat.testgeek.models.UserRole;
 // import com.rajat.testgeek.service.UserService;
 
 @SpringBootApplication
-public class TestgeekApplication // implements CommandLineRunner
+public class TestgeekApplication //implements CommandLineRunner
 {
 
 	// @Autowired
 	// private UserService UserService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(TestgeekApplication.class, args);
-		System.out.println("Welcom to TestGeek!!!");
-	}
-
-	// Test the User Role Model
+	// //Test the User Role Model
 	// @Override
 	// public void run(String... args) throws Exception {
 
@@ -36,8 +31,10 @@ public class TestgeekApplication // implements CommandLineRunner
 	// user1.setProfileImage("photo.jpg");
 
 	// Role role1 = new Role();
+	// role1.setRoleId(20L);
 	// role1.setRoleName("Admin");
 	// Role role2 = new Role();
+	// role2.setRoleId(21L);
 	// role2.setRoleName("Student");
 
 	// Set<UserRole> userRoles = new HashSet<>();
@@ -59,5 +56,10 @@ public class TestgeekApplication // implements CommandLineRunner
 	// System.out.println(user);
 
 	// }
+
+	public static void main(String[] args) {
+		SpringApplication.run(TestgeekApplication.class, args);
+		System.out.println("Welcom to TestGeek!!!");
+	}
 
 }

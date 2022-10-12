@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Users")
 public class User {
@@ -28,6 +30,7 @@ public class User {
     private String profileImage;
 
     @OneToMany(cascade = CascadeType.ALL,fetch= FetchType.EAGER,mappedBy = "user")
+    @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
     public User() {
