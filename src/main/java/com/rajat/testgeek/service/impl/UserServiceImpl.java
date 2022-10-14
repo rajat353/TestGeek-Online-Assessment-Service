@@ -1,4 +1,4 @@
-package com.rajat.testgeek.service;
+package com.rajat.testgeek.service.impl;
 
 import java.util.Set;
 
@@ -8,6 +8,7 @@ import com.rajat.testgeek.models.User;
 import com.rajat.testgeek.models.UserRole;
 import com.rajat.testgeek.repository.RoleRepository;
 import com.rajat.testgeek.repository.UserRepository;
+import com.rajat.testgeek.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -48,19 +49,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long userId) {
-       this.userRepository.deleteById(userId);
+        this.userRepository.deleteById(userId);
     }
 
     @Override
     public User updateUser(User user, Long userId) throws Exception {
-        User updateUser= this.userRepository.findById(userId).orElse(null);
-        if(updateUser==null){
+        User updateUser = this.userRepository.findById(userId).orElse(null);
+        if (updateUser == null) {
             System.out.println("Sorry!! User with UserName " + user.getUsername() + "doesn't exist.");
             throw new Exception("User doesn't Exist!!");
         }
         user.setUserId(userId);
         return this.userRepository.save(user);
-        
+
     }
 
 }
