@@ -3,6 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.rajat.testgeek.models.Role;
 import com.rajat.testgeek.models.User;
 import com.rajat.testgeek.models.UserRole;
 import com.rajat.testgeek.service.UserService;
+import com.rajat.testgeek.service.impl.UserDetailsImpl;
 
 @RestController
 @RequestMapping("/user")
@@ -24,11 +26,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     // Create User Mapping
     @PostMapping("/")
     public User addUser(@RequestBody User user) throws Exception{
 
         //Making a default role type
+        user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
         Role role= new Role();
         role.setRoleId(11L);
         role.setRoleName("Student");
@@ -39,6 +45,8 @@ public class UserController {
 
         Set<UserRole> userRoles = new HashSet<>();
         userRoles.add(userRole);
+
+
         return this.userService.addUser(user, userRoles);
     }
 
@@ -46,6 +54,13 @@ public class UserController {
     @GetMapping("/{username}")
     public User getUser(@PathVariable("username") String username){
         return this.userService.getUser(username);
+    }
+
+    //Get all user details including roles
+    @GetMapping("userdetail/{username}")
+    public UserDetailsImpl getUserDetail(@PathVariable("username") String username){
+        UserDetailsImpl userDetailsImpl= new UserDetailsImpl(this.userService.getUser(username));
+        return userDetailsImpl;
     }
 
     //update user
