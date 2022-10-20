@@ -59,7 +59,7 @@ public class TestgeekApplication //implements CommandLineRunner
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestgeekApplication.class, args);
-		System.out.println("Welcom to TestGeek!!!");
+		System.out.println("Welcome to TestGeek!!!");
 	}
 
 }
