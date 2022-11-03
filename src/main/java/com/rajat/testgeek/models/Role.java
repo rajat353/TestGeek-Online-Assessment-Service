@@ -12,8 +12,13 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "Roles")
+@Getter
+@Setter
 public class Role {
 
     @Id
@@ -22,7 +27,7 @@ public class Role {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
     @JsonIgnore
-    private Set<UserRole> userRoles= new HashSet<>();
+    private Set<UserRole> userRoles = new HashSet<>();
 
     public Role() {
     }
@@ -31,31 +36,5 @@ public class Role {
         this.roleId = roleId;
         this.roleName = roleName;
     }
-
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
-    }
-
-    
 
 }

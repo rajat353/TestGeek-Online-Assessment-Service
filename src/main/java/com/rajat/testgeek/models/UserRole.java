@@ -9,8 +9,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "User_Role")
+@Getter
+@Setter
 public class UserRole {
 
     @Id
@@ -31,30 +36,6 @@ public class UserRole {
     public UserRole(Long userroleId, User user, Role role) {
         this.userRoleId = userroleId;
         this.user = user;
-        this.role = role;
-    }
-
-    public Long getUserroleId() {
-        return userRoleId;
-    }
-
-    public void setUserroleId(Long userroleId) {
-        this.userRoleId = userroleId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
         this.role = role;
     }
 
