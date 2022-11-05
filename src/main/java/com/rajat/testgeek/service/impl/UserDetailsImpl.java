@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.rajat.testgeek.models.User;
-import com.rajat.testgeek.models.Authority;
+import com.rajat.testgeek.models.JWT.Authority;
+import com.rajat.testgeek.models.UserRole.User;
 
 public class UserDetailsImpl implements UserDetails {
 

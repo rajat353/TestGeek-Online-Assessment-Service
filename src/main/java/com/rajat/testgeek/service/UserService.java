@@ -1,8 +1,9 @@
 package com.rajat.testgeek.service;
 
 import java.util.Set;
-import com.rajat.testgeek.models.User;
-import com.rajat.testgeek.models.UserRole;
+
+import com.rajat.testgeek.models.UserRole.User;
+import com.rajat.testgeek.models.UserRole.UserRole;
 
 public interface UserService {
 

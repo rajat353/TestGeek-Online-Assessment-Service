@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.rajat.testgeek.models.User;
+import com.rajat.testgeek.models.UserRole.User;
 import com.rajat.testgeek.repository.UserRepository;
 
 @Service

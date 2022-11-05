@@ -1,4 +1,4 @@
-package com.rajat.testgeek.models;
+package com.rajat.testgeek.models.JWT;
 
 import org.springframework.security.core.GrantedAuthority;
 

@@ -4,8 +4,9 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.rajat.testgeek.models.User;
-import com.rajat.testgeek.models.UserRole;
+
+import com.rajat.testgeek.models.UserRole.User;
+import com.rajat.testgeek.models.UserRole.UserRole;
 import com.rajat.testgeek.repository.RoleRepository;
 import com.rajat.testgeek.repository.UserRepository;
 import com.rajat.testgeek.service.UserService;

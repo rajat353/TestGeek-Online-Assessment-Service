@@ -1,4 +1,4 @@
-package com.rajat.testgeek.models;
+package com.rajat.testgeek.models.UserRole;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

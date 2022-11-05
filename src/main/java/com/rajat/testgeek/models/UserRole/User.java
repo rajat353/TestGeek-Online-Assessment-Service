@@ -1,4 +1,4 @@
-package com.rajat.testgeek.models;
+package com.rajat.testgeek.models.UserRole;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rajat.testgeek.models.Role;
-import com.rajat.testgeek.models.User;
-import com.rajat.testgeek.models.UserRole;
+import com.rajat.testgeek.models.UserRole.Role;
+import com.rajat.testgeek.models.UserRole.User;
+import com.rajat.testgeek.models.UserRole.UserRole;
 import com.rajat.testgeek.service.UserService;
 import com.rajat.testgeek.service.impl.UserDetailsImpl;
 
