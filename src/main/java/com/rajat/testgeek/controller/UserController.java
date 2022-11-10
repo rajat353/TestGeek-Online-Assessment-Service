@@ -64,7 +64,7 @@ public class UserController {
     }
 
     //update user
-    @PutMapping("/{userId}")
+    @PutMapping("update/{userId}")
     public User updateUser(@RequestBody User user, @PathVariable("userId") Long userId) throws Exception{
         return this.userService.updateUser(user, userId);
     }
